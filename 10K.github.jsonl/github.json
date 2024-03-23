@@ -1,0 +1,46 @@
+{
+    "id": "11185349988",
+    "type": "PushEvent",
+    "actor": {
+        "id": 2299951,
+        "login": "pietroalbini",
+        "display_login": "pietroalbini",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/pietroalbini",
+        "avatar_url": "https://avatars.githubusercontent.com/u/2299951?"
+    },
+    "repo": {
+        "id": 26193547,
+        "name": "rust-lang/crates.io-index",
+        "url": "https://api.github.com/repos/rust-lang/crates.io-index"
+    },
+    "payload": {
+        "push_id": 4450652992,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/master",
+        "head": "7da92379e91d708323569780ce32a6aab29b0b76",
+        "before": "3a066faf940a423d1d47885a1de133e1313cb61c",
+        "commits": [
+            {
+                "sha": "7da92379e91d708323569780ce32a6aab29b0b76",
+                "author": {
+                    "name": "bors",
+                    "email": "3a2c29237f73c7cf88424b80e427b1884f346b35@rust-lang.org"
+                },
+                "message": "Updating crate `protobuf#2.10.0`",
+                "distinct": true,
+                "url": "https://api.github.com/repos/rust-lang/crates.io-index/commits/7da92379e91d708323569780ce32a6aab29b0b76"
+            }
+        ]
+    },
+    "public": true,
+    "created_at": "2020-01-01T00:41:02Z",
+    "org": {
+        "id": 5430905,
+        "login": "rust-lang",
+        "gravatar_id": "",
+        "url": "https://api.github.com/orgs/rust-lang",
+        "avatar_url": "https://avatars.githubusercontent.com/u/5430905?"
+    }
+}

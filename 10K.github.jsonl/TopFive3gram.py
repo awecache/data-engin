@@ -2,10 +2,11 @@ import json
 from collections.abc import Iterable
 from collections import Counter
 from collections import Counter
-from nltk.util import ngrams
 import re
 import csv
 
+def ngrams(words, n):
+    return zip(*[words[i:] for i in range(n)])
 
 def find_top_ngrams(strings, n=3, top=5):
     # Initialize a Counter to store the counts of all n-grams
@@ -32,7 +33,7 @@ def generate_author_ngram_arr(author, top_5_ngrams):
         ngram_arr=[' '.join(t[0]) for t in top_5_ngrams]
         author_ngram_arr=[author]+ngram_arr
         return author_ngram_arr
-    
+
 
 filename='10K.github.jsonl'
 commits =[]

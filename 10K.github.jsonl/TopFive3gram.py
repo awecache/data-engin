@@ -15,7 +15,11 @@ def find_top_ngrams(strings, n=3, top=5):
     # Process each string separately
     for string in strings:
         # Tokenize the string into words
-        words = re.findall(r'\w+', string.lower())
+        # words = re.findall(r'\w+', string.lower())
+        punctuation_pattern= r'[^\w\s\'s#]|\b#\d+'
+        removed_punctuation = re.sub(punctuation_pattern, '', string.lower())
+        stripped_spaces=re.sub(r'\s+', ' ', removed_punctuation.strip())
+        words=stripped_spaces.split(' ')
 
         # Generate 3-grams for the current string
         string_ngrams = ngrams(words, n)

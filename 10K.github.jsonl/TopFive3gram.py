@@ -4,6 +4,8 @@ from collections import Counter
 from collections import Counter
 import re
 import csv
+import bz2
+import os
 
 def ngrams(words, n):
     return zip(*[words[i:] for i in range(n)])
@@ -38,11 +40,15 @@ def generate_author_ngram_arr(author, top_5_ngrams):
         author_ngram_arr=[author]+ngram_arr
         return author_ngram_arr
 
+relative_file_path_to_cwd='..'+os.path.sep+'10K.github.jsonl.bz2'
+cwd=os.path.abspath(os.path.dirname(__file__))
+abs_file_path=os.path.abspath(os.path.join(cwd, relative_file_path_to_cwd))
+print('File path: '+abs_file_path)
 
-filename='10K.github.jsonl'
 commits =[]
-with open(filename, encoding="utf8") as commits_file:
-    for line in commits_file:
+with bz2.open(abs_file_path, 'rb') as bz2_ref:
+    for line_bytes in bz2_ref:
+        line=line_bytes.decode('utf-8')
         commits.append(json.loads(line))
 
 # filtered push event commits
